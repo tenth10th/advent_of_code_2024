@@ -1,0 +1,10 @@
+-i https://pypi.org/simple
+pytest
+pytest-watch
+pytest-mock
+mocker
+flake8
+mypy
+black
+isort
+uv
