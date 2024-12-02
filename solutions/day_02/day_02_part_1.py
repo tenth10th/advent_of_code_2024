@@ -79,8 +79,11 @@ if __name__ == "__main__":
     log_level = logging.INFO
     if "-d" in sys.argv:
         log_level = logging.DEBUG
+        print("(Detailed Output)")
+    else:
+        print("(High-level Output)")
 
-    logging.basicConfig(level=log_level)
+    logging.basicConfig(level=log_level, format="%(message)s")
 
     with open("puzzle_input.txt", "r") as f:
         text_data = f.read()
