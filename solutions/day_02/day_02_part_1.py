@@ -5,12 +5,12 @@ log = logging.getLogger("day_02")
 
 Report = list[int]
 
-def get_safe_report_count(text_data: str) -> int:
+
+def get_safe_report_count(reports: list[Report], check_report_safety) -> int:
     """
     Get the count of Safe reports from a text data file of Reports
     """
     safe_reports_count = 0
-    reports = parse_reports(text_data)
     log.debug(f"Found {len(reports):,} reports...")
     for report in reports:
         if check_report_safety(report):
@@ -30,7 +30,7 @@ def parse_reports(text_data: str) -> list[Report]:
         report: Report = [int(digit) for digit in line.split(" ")]
         if report:
             reports.append(report)
-    print(f"Read {len(reports):,} reports from file")
+    log.info(f"Read {len(reports):,} reports from file")
     return reports
 
 
@@ -55,17 +55,22 @@ def check_report_safety(report: Report) -> bool:
             # Safe measurements must consistently Increase or Decrease
             if measurement > last_measurement:
                 if increasing is False:
-                    log.debug(f"   [{i}] Was Decreasing, but {measurement} > {last_measurement}")
+                    log.debug(
+                        f"   [{i}] Was Decreasing, but {measurement} > {last_measurement}"
+                    )
                     return False
                 increasing = True
             else:
                 if increasing is True:
-                    log.debug(f"   [{i}] Was Increasing, but {measurement} < {last_measurement}")
+                    log.debug(
+                        f"   [{i}] Was Increasing, but {measurement} < {last_measurement}"
+                    )
                     return False
                 increasing = False
 
         last_measurement = measurement
 
+    log.debug("   Safe!")
     return True
 
 
@@ -80,6 +85,7 @@ if __name__ == "__main__":
     with open("puzzle_input.txt", "r") as f:
         text_data = f.read()
 
-    safe_reports_count = get_safe_report_count(text_data)
+    reports = parse_reports(text_data)
+    safe_reports_count = get_safe_report_count(reports, check_report_safety)
 
-    print(f"Safe Reports Found: {safe_reports_count:,}")
+    log.info(f"Safe Reports Found: {safe_reports_count:,}")

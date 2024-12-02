@@ -14,7 +14,15 @@ Fully tested, annotated solutions for the Advent of Code 2024 challenges, organi
 
 ## Currently Implemented Days:
 
-* [Day 01](solutions/day_01/README.md)
+*Week 1*
+
+* [Day 01](solutions/day_01/README.md) - 
+  [Day 02](solutions/day_02/README.md) -
+  Day 03 -
+  Day 04 -
+  Day 05 -
+  Day 06 -
+  Day 07
 
 ## Installation
 

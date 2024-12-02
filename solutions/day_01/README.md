@@ -1,5 +1,9 @@
 # Day 1, Part 1
+
+https://adventofcode.com/2024/day/1
+
 ### Work to do:
+
 In order to calculate the Total Distance, we must:
 
 * Parse the text file into two vertical "columns" of equal length
