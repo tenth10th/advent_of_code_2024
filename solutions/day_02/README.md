@@ -43,23 +43,11 @@ ___
 
 In order to apply the "Problem Dampener" to our Report Safety checker, we must:
 
-* Parse the data file, which is in plain text format
+* Parse file and Reports (lists of integers) as per Part 1
 
-* Parse each (non-blank) line into a Report: an ordered collection of integers
+* Determine the Safety as per Part 1...
 
-* Determine the safety of each integer measurement, relative to the previous one:
-
-    * Safe measurements uniformly increase, or decrease
-
-    * Safe measurements differ by 1, 2, or 3
-
-    * (Measurements that don't meet these requirements are NOT SAFE)
-
-* Determine Report safety based on Safe vs. Unsafe measurements:
-
-    * Reports with 0 or 1 Unsafe measurements are Safe
-
-    * Reports with more than 1 Unsafe measurements are Unsafe
+* If removing any single Measurement makes the report Safe, consider it to be Safe
 
 * Count the total number of Safe (as opposed to Unsafe) Reports
 
@@ -67,9 +55,21 @@ In order to apply the "Problem Dampener" to our Report Safety checker, we must:
 
 * (Part 1 Hints are still applicable!)
 
-* The first measurement in a Report is always Safe
+* Measurement safety is "relative":
 
-   * Subsequent measurements must be compared to the previous adjacent Measurement
+    * If we remove any one measurement, leaving the remaining measurements in order:
+
+    * If the reduced Report is now Safe, consider it Safe!
+
+    * If the reduced Report is still Unsafe, consider it Unsafe!
+
+        * (We aren't interested in removing multiple values)
+
+        * (We must consider each Measurement being removed...)
+
+        * (There may be a more clever solution than testing them all?)
+
+        * (But testing them all, at 5 measurements per Record, isn't too expensive)
 
 ### Debugging:
 
