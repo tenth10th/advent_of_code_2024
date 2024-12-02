@@ -47,7 +47,9 @@ In order to apply the "Problem Dampener" to our Report Safety checker, we must:
 
 * Determine the Safety as per Part 1...
 
-* If removing any single Measurement makes the report Safe, consider it to be Safe
+* Implement "problem-dampening":
+
+    * If removing any one Measurement makes the report Safe: Consider it to be Safe
 
 * Count the total number of Safe (as opposed to Unsafe) Reports
 

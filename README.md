@@ -1,16 +1,32 @@
 # Advent of Code 2024 Solutions
 
-Fully tested, annotated solutions for the Advent of Code 2024 challenges, organized by Day. Each Day includes, roughly in order of spoilery-ness:
+Fully tested, annotated solutions for the Advent of Code 2024 challenges, organized by Day.
 
-* A README.md file containing a breakdown of the necessary work, and hints about non-obvious details
+Each Day includes, roughly in order of spoilery-ness:
 
-* PyTest test files, including intermediary steps against the example/sample data
+* A README.md file containing:
+
+  * A breakdown of the necessary work (summary of the Advent Of Code description)
+
+  * Hints about non-obvious details or edge cases
+
+* PyTest test files, containing:
+
+  * (Intended to be run via `pytest`, which should work at any location within the repo, but )
+
+  * Tests for each functional unit of code used in the solution (per "Part" for multi-part days)
+  
+    * Including the example/sample data, sometimes in multiple intermediate forms
 
 * Implementations of each day, broken down by part if applicable (e.g. `day_01_part_1.py`)
 
-    * If run directly, these will generate the answer for each part of each day
+  * (Intended to be run from inside the "day" folder)
 
-    * (This output is a direct spoiler!)
+  * The code itself is arguably a fairly large spoiler, as an implementation of a working solution
+
+  * Run directly, these will generate the answer for each part of each day _(possibly along with some intermediate stats along the way)_
+
+  * This output is a direct spoiler for the correct answer, but not necessarily the implementation?
 
 ## Currently Implemented Days:
 
