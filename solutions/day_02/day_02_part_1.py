@@ -81,7 +81,7 @@ if __name__ == "__main__":
         log_level = logging.DEBUG
         print("(Detailed Output)")
     else:
-        print("(High-level Output)")
+        print("(High-level Output: Run with -d for verbose debugging)")
 
     logging.basicConfig(level=log_level, format="%(message)s")
 
