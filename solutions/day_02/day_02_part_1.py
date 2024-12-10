@@ -37,7 +37,7 @@ def parse_reports(text_data: str) -> list[Report]:
 def check_report_safety(report: Report) -> bool:
     """
     Return the safety of a Report as a boolean
-    (As per the rules: https://adventofcode.com/2024/day/2#part2 )
+    (As per the rules: https://adventofcode.com/2024/day/2#part1 )
     """
     last_measurement = None
     increasing = None

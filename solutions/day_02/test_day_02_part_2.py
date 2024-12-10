@@ -9,11 +9,11 @@ def test_check_dampened_report_safety():
 
 
 def test_describe_dampening():
-    offset = 2
+    from_index = 2
     report = [1, 2, 9, 4, 5]
-    report.pop(offset)
-    description = describe_dampening(report, offset)
-    assert description == "   (with [2] removed: [1, 2, *, 4, 5])"
+    removed = report.pop(from_index)
+    description = describe_dampening(report, removed, from_index)
+    assert description == "   (with 9 removed: [1, 2, *, 4, 5] becomes safe!)"
 
 
 # Tuples of (Report, Safety Boolean)
